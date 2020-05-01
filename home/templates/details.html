@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+
+{% block title%}Add Post {% endblock%}
+
+{% block body%}
+
+<div class="container">
+
+    <h1>Details Post</h1>
+
+    <div class="row">
+        <div class="col-md-10">
+            <table class="table">
+                <tr>
+                    <td>Name:</td>
+                    <td>{{post.name}}</td>
+                </tr>
+                <tr>
+                    <td>Post Date:</td>
+                    <td>{{post.created_date}}</td>
+                </tr>
+
+                <tr>
+                    <td>Update Date:</td>
+                    <td>{{post.update_date}}</td>
+                </tr>
+
+                <tr>
+                    <td>Sort Information:</td>
+                    <td>{% autoescape off %}
+                    {{post.sort_info}}
+                {% endautoescape %}</td>
+                </tr>
+
+                <tr>
+                    <td>Descripition
+
+                    </td>s
+                    <td>
+                        {% autoescape off %}
+                    {{post.desc}}
+                {% endautoescape %}
+
+                        </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-2">
+           right
+        </div>
+    </div>
+
+
+
+</div>
+
+
+{% endblock%}

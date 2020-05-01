@@ -1,0 +1,30 @@
+
+{% extends 'base.html'%}
+
+{% block title%}Add Post {% endblock%}
+
+{% block body%}
+
+<div class="container">
+
+    <marquee behavior="alternate" width="250px">Result Posts Post</marquee>
+
+    <div class="row">
+        <div class="col-md-10">
+            <ul>
+            {% for res in resposts%}
+                <li><a href="{% url 'details' res.pk %}"> {{ res.name}}</a></li>
+            {% endfor%}
+                </ul>
+        </div>
+        <div class="col-md-2">
+           right
+        </div>
+    </div>
+
+
+
+</div>
+
+
+{% endblock%}

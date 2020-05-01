@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+
+{% block title%}Homepage{% endblock%}
+
+{% block body%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="con-b">
+                <h3 class="text-center bg-danger p-2 text-white">Result</h3>
+
+                <div class="data">
+                    {% for res in resposts%}
+                    <ul>
+                        <li><h6><a href="{% url 'details' res.slug %}">{{ res.pk}}{{ res.name}}</a></h6></li>
+
+
+                    </ul>
+                    {% endfor%}
+                    <div class="p-4 col text-center">
+                        <a href="{% url 'resultpage'%}" class="btn btn-info">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="con-b">
+                <h3 class="text-center bg-danger p-2 text-white">Admit Card</h3>
+                <div class="data">
+                    {% for admt in jobadmtcards%}
+                    <ul>
+                        <li><h6><a href="{% url 'details' admt.slug %}">{{ admt.name}}</a></h6></li>
+                    </ul>
+                    {% endfor%}
+
+                    <div class="p-4 col text-center">
+                        <a href="" class="btn btn-info">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="con-b">
+                <h3 class="text-center bg-danger p-2 text-white">Latest Jobs</h3>
+                <div class="data">
+                    {% for job in jobposts%}
+                    <ul>
+                        <li><h6><a href="{% url 'details' job.slug %}">{{ job.name}}</a></h6></li>
+                    </ul>
+                    {% endfor%}
+                    <div class="p-4 col text-center">
+                        <a href="" class="btn btn-info">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock%}
